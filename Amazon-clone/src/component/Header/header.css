@@ -51,7 +51,36 @@ font-size: 10.5px;
   justify-content: center;
   align-items: center;
   margin-right: 25px;
-  width:630px;
+  width:100%;
+  overflow: hidden;
+  flex:1;
+  border-radius: 10px;
+  
+}
+.search select,
+.search input{
+  padding: 10px;
+  font-weight: bold;
+  outline:1px solide white;
+}
+.search select{
+  border:none;
+}
+.search input{
+  border:1px solid white;
+  width:100%;
+  margin-right:-2px;
+}
+.search svg{
+  padding: 7px;
+  background:#febd69;
+  color:#1a1a1a;
+}
+.search svg :hover{
+  background-color: #d49644;
+}
+.search:focus-within{
+  border:2px solid rgb(235,161,173);
 }
 #drop{
   height:35px;
@@ -164,4 +193,17 @@ border-radius: 3px;
   display: flex;
   gap:2px;
   align-items: center;
+}
+@media screen and (max-width:576px){
+  header{
+    display: flex;
+    flex-direction: column !important;
+    height: auto;
+  }
+  .lower_header ul li:not(:first-child){
+    display: none;
+  }
+  .flag_country{
+    display: none;
+  }
 }

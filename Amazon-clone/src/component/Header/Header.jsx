@@ -32,9 +32,9 @@ function Header() {
           </select>
 
           <input type="text" placeholder="Search Amazon" className="search" />
-          <span className="search_icon">
-            <IoSearch />
-          </span>
+          
+            <IoSearch size={25}/>
+          
         </div>
         <div className="header_right">
           <a href="" className="flag_country">
