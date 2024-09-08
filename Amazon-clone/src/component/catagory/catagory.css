@@ -1,11 +1,11 @@
 .catagory{
   height:350px;
-  width:350px;
+  width:280px;
   background-color: white;
   box-shadow:0 0 10px rgba(0,0,0,0.2);
 }
 .catagory img{
-  width:100%;
+  width:90%;
   max-height: contain;
   padding:0px 10px;
   object-fit: contain;

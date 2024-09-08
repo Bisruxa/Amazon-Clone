@@ -1,0 +1,50 @@
+/* Base styling for card container */
+.card_container {
+  display: flex;
+  flex-direction: column; /* Default to column layout */
+  align-items: center; /* Center items horizontally */
+  margin: 20px; /* Add margin for spacing */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional box shadow for styling */
+}
+
+/* Flexed layout for the card */
+.product_flexed {
+  flex-direction: row; /* Row layout when flex is true */
+  gap: 20px; /* Space between items */
+  width: 100%; /* Full width for the container */
+  height: auto; /* Auto height based on content */
+}
+
+/* Ensure that images take the full width of their container */
+.img_container {
+  width: 100%;
+  height: auto; /* Maintain aspect ratio */
+  max-width: 300px; /* Limit the maximum width of the image */
+  object-fit: cover; /* Cover the container without distortion */
+}
+
+/* Title styling */
+.product_flexed h3 {
+  padding: 20px 0; /* Add padding to title */
+  text-align: center; /* Center the title */
+}
+
+/* Button styling */
+.product_flexed .button {
+  display: block;
+  width: 150px; /* Fixed width for button */
+  margin: 20px auto; /* Center the button and add margin */
+}
+
+/* Styling for the description */
+.description {
+  max-width: 500px; /* Limit the width of the description */
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 768px) {
+  .product_flexed {
+    flex-direction: column; /* Stack items vertically on small screens */
+    align-items: center; /* Center items horizontally on small screens */
+  }
+}

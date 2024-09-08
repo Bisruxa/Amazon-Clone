@@ -2,20 +2,21 @@ import React from "react";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { IoSearch } from "react-icons/io5";
 import { PiShoppingCartSimpleBold } from "react-icons/pi";
-import './header.css';
-
+import './header.css'
+import Lower_header from "../../component/Header/Lower_header";
+import { Link } from "react-router-dom";
 function Header() {
   return (
     <>
       <header>
         <div className="header_left">
-          <a href="">
+          <Link to="/">
             <img
               src=" https://pngimg.com/uploads/amazon/amazon_PNG11.png"
               alt="amazon logo"
               className="amazon_icon"
             />
-          </a>
+          </Link>
           <div className="description">
             <span className="map_icon">
               <FaMapMarkerAlt />
@@ -37,45 +38,45 @@ function Header() {
           
         </div>
         <div className="header_right">
-          <a href="" className="flag_country">
+          <Link to="" className="flag_country">
             <span>
               <img
                 src="https://www.shutterstock.com/shutterstock/photos/2477519645/display_1500/stock-vector-american-flag-usa-design-united-states-flag-rendered-usa-flag-the-usa-national-flag-2477519645.jpg"
-                alt=""
+                alt="flag"
                 className="flag"
               />
             </span>
             <select name="" id="country">
               <option value="">EN</option>
             </select>
-          </a>
+          </Link>
           <div className="last_right_corner">
-            <a href="">
+            <Link to="/auth">
               <div className="sign-in">
                 <p> Hello,sign in</p>
                 <select className="lists">
                   <option value="">Account & Lists</option>
                 </select>
               </div>
-            </a>
-            <a href="">
+            </Link>
+            <Link to="/orders">
               <div className="orders">
                 <p>Returns</p>
                 <span>& Orders</span>
               </div>
-            </a>
-            <a href="" className="cart">
+            </Link>
+            <Link to="/cart" className="cart">
               <span>
                 <PiShoppingCartSimpleBold />
               </span>
 
               <p>0</p>
-            </a>
+            </Link>
             <p>Cart</p>
           </div>
         </div>
       </header>
-      
+       <Lower_header />
     </>
   );
 }
