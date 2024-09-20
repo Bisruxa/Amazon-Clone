@@ -157,14 +157,22 @@ margin-left: 5px;
 .orders{
   margin-right:20px
 }
-.cart{
-  margin-left:20px;
-  display: flex;
-   margin-right:10px;
+.cart {
+  position: relative;
+ padding-right:10px;
 }
-.cart span{
- font-size: 20px;
-  
+.cart span {
+  position: absolute;
+  font-weight: bold;
+  top: -6px;
+  font-size: 20px;
+  background-color: #1a1a1a;
+  left: 14px;
+  color: orange;
+}
+
+.cart_img{
+  size:45px;
 }
 .cart p{
    font-size: 8px;

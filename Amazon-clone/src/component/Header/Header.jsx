@@ -6,10 +6,12 @@ import './header.css'
 import Lower_header from "../../component/Header/Lower_header";
 import { Link } from "react-router-dom";
 import { DataContext } from "../DataProvider/DataProvider";
-import { catagoryinfo } from "../catagory/catagoryinfo";
 import {auth} from '../../Utility/firebase'
 function Header() {
-  const [user ,basket,dispatch]=useContext(DataContext)
+  const {user ,basket,dispatch}=useContext(DataContext)
+  const totalItem = basket ?.reduce((amount,item)=>{
+    return item.amount + amount;
+  },0)
   return (
     <section className="fixed">
       <header>
@@ -37,10 +39,11 @@ function Header() {
             <option value="">All</option>
           </select>
 
-          <input type="text" placeholder="Search Amazon" className="search" />
+          <input type="text" placeholder="Search product" className="search" />
 
           <IoSearch size={25} />
         </div>
+        {/* right side link */}
         <div className="header_right">
           <Link to="" className="flag_country">
             <span>
@@ -81,13 +84,13 @@ function Header() {
               </div>
             </Link>
             <Link to="/cart" className="cart">
-              <span className="cart_img">
-                <PiShoppingCartSimpleBold />
-              </span>
+            
+            <PiShoppingCartSimpleBold className="cart_img"/>
+              <span>{totalItem}</span>
 
-              <p>{basket.length}</p>
+            
             </Link>
-            <p>Cart</p>
+            
           </div>
         </div>
       </header>

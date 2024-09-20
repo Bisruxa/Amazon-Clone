@@ -10,14 +10,13 @@ function Product() {
     setIsLoading(true);
     axios
       .get("https://fakestoreapi.com/products/")
-
       .then((res) => {
         setProducts(res.data);
         setIsLoading(false);
       })
-      .catch((error) => {
+      .catch((err) => {
         setIsLoading(false);
-        console.log(error);
+        console.log(err);
       });
   }, []);
   return (

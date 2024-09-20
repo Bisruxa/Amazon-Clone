@@ -1,51 +1,41 @@
-/* Base styling for card container */
-.card_container {
+/* .card_container {
   display: flex;
-  flex-direction: column; /* Default to column layout */
-  align-items: center; /* Center items horizontally */
-  margin: 20px; /* Add margin for spacing */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional box shadow for styling */
-}
-
-/* Flexed layout for the card */
+  flex-direction: column; 
+  align-items: center; 
+  margin: 20px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); } */
+  /* 
 .product_flexed {
-  flex-direction: row; /* Row layout when flex is true */
-  gap: 20px; /* Space between items */
-  width: 100%; /* Full width for the container */
-  height: auto; /* Auto height based on content */
-}
-
-/* Ensure that images take the full width of their container */
-.img_container {
+  flex-direction: row; 
+  gap: 20px;
+  width: 100%; 
+  height: auto; 
+} */
+/* .img_container {
   width: 100%;
-  height: auto; /* Maintain aspect ratio */
-  max-width: 300px; /* Limit the maximum width of the image */
-  object-fit: cover; /* Cover the container without distortion */
+  height: auto; 
+  max-width: 300px; 
+  object-fit: cover; 
+} */
+/* .product_flexed h3 {
+  padding: 20px 0; 
+  text-align: center; 
 }
 
-/* Title styling */
-.product_flexed h3 {
-  padding: 20px 0; /* Add padding to title */
-  text-align: center; /* Center the title */
-}
 
-/* Button styling */
 .product_flexed .button {
   display: block;
-  width: 150px; /* Fixed width for button */
-  margin: 20px auto; /* Center the button and add margin */
+  width: 150px; 
+  margin: 20px auto;
 }
 
-/* Styling for the description */
-.description {
-  max-width: 500px; /* Limit the width of the description */
-}
 
-/* Media query for smaller screens */
+
+
 @media screen and (max-width: 768px) {
   .product_flexed {
-    flex-direction: column; /* Stack items vertically on small screens */
-    align-items: center; /* Center items horizontally on small screens */
+    flex-direction: column; 
+    align-items: center; 
   }
 }
 .products_container {
@@ -78,4 +68,94 @@
 
 .container:hover .button {
   display: block;
+} */
+.card_container{
+    width: 250px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    padding: 10px;
+    color: black;
+    text-decoration: none;
+    position: relative;
+    }
+ .card_container:hover .button{
+    display: block;
 }
+.card_container img{
+    padding: 10px;
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+}
+.button{
+    display: none;
+    padding: 5px 10px;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    background-color: rgb(134, 89, 7);
+    width: 100%;
+    margin: 10px 0;
+    border-radius: 30px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+ }
+ .button:hover{
+    background-color: rgb(62, 41, 4);
+ }
+.rating{
+    display: flex;
+    align-items: center;
+    padding: 10px 0px;
+}
+.rating small{
+    color: #111;
+    font-size: 10px;
+}
+.products_container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px,1fr));  
+    max-width: 1450px;
+    margin: 100px auto;
+    gap: 50px;
+    justify-items: center;
+    }
+.products_container section {
+    margin: 0 auto;
+}
+/* flex code */
+.product_flexed{
+    box-shadow: none;
+    height: auto;
+    display: flex;
+    gap: 50px;
+    width: 100%;
+}
+.product_flexed h3{
+    padding: 20px 0px;
+}
+.product_flexed .button{
+    display: block;
+    position: static;
+    width: 150px;
+    margin-right: 40px;
+}
+.product_flexed{
+    height: 50vh;
+}
+.product_flexed img{
+    width: 200px !important;
+    height: auto;
+}
+.description {
+  max-width: 500px; }
+@media screen and (max-width: 760px){
+    .product_flexed{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+
+

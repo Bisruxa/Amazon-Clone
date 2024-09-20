@@ -48,7 +48,7 @@ function Result() {
             <p style={{ padding: "30px" }}>Category/{categoryName}</p>
             <hr />
             <div className="products_container">
-              {results.map((product) => (
+              {results?.map((product) => (
                 <ProductCard key={product.id} product={product} 
                 renderDesc={false}
                 renderAdd={true}/>
