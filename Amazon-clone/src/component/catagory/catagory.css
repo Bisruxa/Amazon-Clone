@@ -30,3 +30,7 @@ color:rgb(9,132,209);
   grid-template-columns: repeat(4,1fr);
   place-items: center;
 }
+.small-img {
+  width: 379px;
+  height:304px;  
+}

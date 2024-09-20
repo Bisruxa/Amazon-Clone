@@ -19,13 +19,14 @@ setIsLoading(false)
     .catch((error)=>{
       setIsLoading(false)
 console.log(`error:${error}`)
-    })
+    }) 
   },[])
   return (
     <Layout>
       {IsLoading ? <Loader /> : <ProductCard product={product}
       flex = {true} 
-      renderDesc={true}/>}
+      renderDesc={true}
+      renderAdd={true}/>}
     </Layout>
   );
 }

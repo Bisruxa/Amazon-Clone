@@ -1,22 +1,28 @@
-export const catagoryinfo=[
+import img1 from '../../carasouls/img/10006.jpg'
+import img2 from "../../carasouls/img/10007.jpg";
+import img3 from "../../carasouls/img/10008.webp";
+import img4 from "../../carasouls/img/10009.webp";
+
+export const catagoryinfo = [
   {
-    title:"Electronics",
-    name:'electronics',
-    imgLink:"https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg"
+    title: "Electronics",
+    name: "electronics",
+    imgLink: img1,
   },
-{
-    title:"Discover fashion trends",
-    name:"women's clothing",
-    imgLink:"https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg"
+  {
+    title: "Discover fashion trends",
+    name: "women's clothing",
+    imgLink: img2,},
+  {
+    title: "Men's Clothing",
+    name: "men's clothing",
+    imgLink: img1,
+    // className:"small-img"
   },
-{
-    title:"Men's Clothing",
-    name:"men's clothing",
-    imgLink:"https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg"
+  {
+    title: "Jewelery",
+    name: "jewelery",
+    imgLink: img2,
+    // className:"small-img",
   },
-{
-    title:"Jewelery",
-    name:'jewelery',
-    imgLink:"https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg"
-  },
-]
+];

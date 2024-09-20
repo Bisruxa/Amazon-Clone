@@ -1,21 +1,25 @@
 import React, { useEffect,useState } from 'react'
 import ProductCard from './ProductCard'
-
+import axios from 'axios'
 import Loader from '../loader/Loader'
+import './product.css'
 function Product() {
   const [Products,setProducts] = useState()
   const [IsLoading, setIsLoading] = useState(false);
-  useEffect(()=>{
+  useEffect(() => {
     setIsLoading(true);
-   axios.get('https://fakestoreapi.com/products/')
-  },[])
-  .then((res)=>{
-    setProducts(res.data)
-    setIsLoading(false);
-  })
-  .catch((error)=>{
-    setIsLoading(false);
-    console.log(error)})
+    axios
+      .get("https://fakestoreapi.com/products/")
+
+      .then((res) => {
+        setProducts(res.data);
+        setIsLoading(false);
+      })
+      .catch((error) => {
+        setIsLoading(false);
+        console.log(error);
+      });
+  }, []);
   return (
     <>
       {IsLoading ? (
@@ -24,7 +28,8 @@ function Product() {
         <section className="products_container">
           {Products?.map((singleProduct) => {
             return (
-              <ProductCard product={singleProduct} key={singleProduct.id} />
+              <ProductCard product={singleProduct} key={singleProduct.id} 
+              renderAdd={true}/>
             );
           })}
         </section>

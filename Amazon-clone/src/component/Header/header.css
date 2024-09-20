@@ -17,6 +17,12 @@ h1, h2, h3 {
   margin: 0;
   padding: 0;
   }
+  .fixed{
+    position: sticky;
+    top:0;
+    z-index:100;
+
+  }
 header{
   background-color: #141920;
   color:white;
@@ -42,9 +48,9 @@ color:rgb(203, 200, 200);
 font-size: 10.5px;
 
 }
-.map_icon{
+/* .map_icon{
   padding-top: 15px;
-}
+} */
 /* header middle */
 .header_middle{
   display: flex;
@@ -158,7 +164,7 @@ margin-left: 5px;
 }
 .cart span{
  font-size: 20px;
-
+  
 }
 .cart p{
    font-size: 8px;
@@ -166,15 +172,14 @@ margin-left: 5px;
   margin-bottom:3px;
   
 }
-.header_left a:hover,
-.description :hover,
+.amazon_icon:hover,
+.map_description :hover,
 .header_right a:hover,
-.last_right_corner a:hover,
-.orders:hover,
-.cart:hover{
+.cart span:hover{
 border:1px solid white;
 border-radius: 3px;
 }
+
 .lower_header{
   background-color: #232f3e;
   color:white;

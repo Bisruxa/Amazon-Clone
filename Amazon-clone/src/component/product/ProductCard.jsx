@@ -3,11 +3,22 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./product.css";
-
-function ProductCard({ product, flex, renderDesc }) {
+import { useContext } from "react";
+import { DataContext } from "../DataProvider/DataProvider";
+import { Type } from "../../Utility/action.type";
+function ProductCard({ product, flex, renderDesc,renderAdd }) {
   const { image, title, id, rating, price, description } = product;
 
-  // Create a base class and conditionally add 'product_flexed' if flex is true
+ const [state,dispatch] =useContext(DataContext)
+ console.log(state)
+ const addToCart =()=>{
+  dispatch({
+    type:Type.ADD_TO_CART,
+    item:{ image, title, id, rating, price, description 
+
+    }
+  })
+ }
   const containerClass = flex
     ? "card_container product_flexed"
     : "card_container";
@@ -24,8 +35,15 @@ function ProductCard({ product, flex, renderDesc }) {
           {/* <Rating value={rating.rate} precision={0.1}/> */}
           {/* <small>{rating.count}</small> */}
         </div>
-        <div>{/* <CurrencyFormat amount={price}/> */}</div>
-        <button className="button">Add to Cart</button>
+        <div className="container">
+          <div className="price">$45</div>
+          <div>{/* <CurrencyFormat amount={price}/> */}</div>
+          {renderAdd && (
+            <button className="button" onClick={addToCart}>
+              Add to Cart
+            </button>
+          )}
+        </div>
       </div>
     </div>
   );
