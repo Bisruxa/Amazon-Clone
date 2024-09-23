@@ -7,8 +7,9 @@ import Lower_header from "../../component/Header/Lower_header";
 import { Link } from "react-router-dom";
 import { DataContext } from "../DataProvider/DataProvider";
 import {auth} from '../../Utility/firebase'
+
 function Header() {
-  const {user ,basket,dispatch}=useContext(DataContext)
+  const [{user ,basket}, dispatch]=useContext(DataContext)
   const totalItem = basket ?.reduce((amount,item)=>{
     return item.amount + amount;
   },0)
@@ -19,16 +20,16 @@ function Header() {
           <Link to="/">
             <img
               src=" https://pngimg.com/uploads/amazon/amazon_PNG11.png"
-              alt="amazon logo"
+              alt="Amazon logo"
               className="amazon_icon"
             />
           </Link>
           {/* <div className="description"> */}
-            {/* <span className="map_icon"> */}
+          {/* <span className="map_icon"> */}
 
-            {/* </span> */}
-            <div className="map_description">
-              <FaMapMarkerAlt />
+          {/* </span> */}
+          <div className="map_description">
+            <FaMapMarkerAlt />
               <p>Delivered to</p>
               <span>Ethiopia</span>
             </div>
@@ -36,7 +37,9 @@ function Header() {
         </div>
         <div className="header_middle">
           <select name="" id="drop">
-            <option value="">All</option>
+            <option value="all">All</option>
+            <option value="electronics">Electronics</option>
+            <option value="women_clothing">Women clothings</option>
           </select>
 
           <input type="text" placeholder="Search product" className="search" />
@@ -58,7 +61,7 @@ function Header() {
             </select>
           </Link>
           <div className="last_right_corner">
-            <Link to={user && "/auth"}>
+            <Link to={!user && "/auth"}>
               <div className="sign-in">
                 {user ? (
                   <>
@@ -84,13 +87,9 @@ function Header() {
               </div>
             </Link>
             <Link to="/cart" className="cart">
-            
-            <PiShoppingCartSimpleBold className="cart_img"/>
-              <span>{totalItem}</span>
-
-            
+              <PiShoppingCartSimpleBold className="cart_img" />
+              <span className="cart_count">{totalItem}</span>
             </Link>
-            
           </div>
         </div>
       </header>

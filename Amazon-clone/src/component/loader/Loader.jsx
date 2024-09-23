@@ -8,7 +8,7 @@ function Loader() {
       justifyContent:"center",
       height:"50vh",
     }}>
-      <PulseLoader />
+      <PulseLoader color='black'/>
     </div>
   );
 }

@@ -21,34 +21,36 @@ function Auth() {
    e.preventDefault();
    if (e.target.name === "signin") {
      setLoading({ ...loading, signIn: true });
-     try {
-       const userInfo = await signInWithEmailAndPassword(auth, email, password);
+     
+      signInWithEmailAndPassword(auth, email, password).then((userInfo)=>{
        dispatch({
          type: Type.SET_USER,
          user: userInfo.user,
        });
        setLoading({ ...loading, signIn: false });
        navigate("/");
-     } catch (err) {
+      })
+     .catch ((err)=> {
        console.log(err);
        setError(err.message);
        setLoading({ ...loading, signIn: false });
-     }
+     })
    } else {
      setLoading({ ...loading, signUp: true });
-     try {
-       const userInfo = await createUserWithEmailAndPassword(
+   createUserWithEmailAndPassword(
          auth,
          email,
          password
-       );
-       dispatch({
+       ).then((userInfo)=>{
+  dispatch({
          type: Type.SET_USER,
          user: userInfo.user,
        });
        setLoading({ ...loading, signUp: false });
        navigate("/");
-     } catch (err) {
+       })
+     
+     .catch ((err) =>{
        console.log(err);
        if (err.code === "auth/email-already-in-use") {
          setError("This email is already in use. Please sign in instead.");
@@ -56,7 +58,7 @@ function Auth() {
          setError(err.message);
        }
        setLoading({ ...loading, signUp: false });
-     }
+     })
    }
  };
 
@@ -114,7 +116,7 @@ function Auth() {
           )}
         </div>
       </div>
-    </section>
+    `</section>
   );
 }
 
