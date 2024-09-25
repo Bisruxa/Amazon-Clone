@@ -64,12 +64,12 @@ function Cart() {
         {basket?.length !== 0 && (
           <div className="subtotal">
             <div>
-              <p>Subtottal ({basket?.length} items)</p>
+              <p>Subtotal ({basket?.length} items)</p>
               <CurrencyFormat amount={total} />
             </div>
             <span>
               <input type="checkbox" />
-              <small>This order sontains a gift </small>
+              <small>This order contains a gift </small>
             </span>
             <Link to="/payments">Continue to checkout</Link>
           </div>

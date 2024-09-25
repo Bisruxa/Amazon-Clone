@@ -58,14 +58,14 @@
     text-align: center;
     width: 100%;
     border:none;
-    background-color: var(--primary-color);
+    background-color:#EA9F4B;
     border-radius: 5px;
     padding: 5px 10px;
     text-decoration: none;
     color: black;
 }
 .subtotal a:hover{
-    background: var(--primary-shade);
+    background: #EA9F4Bcc;
 }
 .subtotal >div,
 .subtotal span{

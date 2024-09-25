@@ -4,10 +4,10 @@ import { Type } from "./action.type"
 export const initialState={
   basket:[],
   user:null
-}
+};
 export const reducer = (state, action) => {
   switch (action.type) {
-    case Type.ADD_TO_BASKET: {
+    case Type.ADD_TO_CART: {
       const existingItem = state.basket.find(
         (item) => item.id === action.item.id
       );
